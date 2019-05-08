@@ -1,3 +1,7 @@
+# Service examples
+
+This repo has some examples of basic usage of Redis, RabbitMQ, Graphite and Grafana
+
 # Redis
 
 docker run --name redis -d redis
@@ -27,7 +31,9 @@ Other structures
 
 `docker-compose up --scale consumer=2`
 
-# Graphite
+# Graphite + Grafana
 
 - Whisper
 - Aggregator
+
+`docker-compose up --scale node=3`
