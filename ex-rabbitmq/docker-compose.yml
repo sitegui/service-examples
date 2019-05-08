@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+  rabbitmq:
+    image: rabbitmq:alpine
+  publisher:
+    build: .
+    environment:
+      ROLE: publisher
+    depends_on:
+      - rabbitmq
+  consumer:
+    build: .
+    environment:
+      ROLE: consumer
+    depends_on:
+      - rabbitmq
+networks:
+  default: 

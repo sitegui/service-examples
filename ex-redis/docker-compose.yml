@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+  redis:
+    image: redis:alpine
+  setter:
+    build: .
+    environment:
+      ROLE: set
+    depends_on:
+      - redis
+  getter:
+    build: .
+    environment:
+      ROLE: get
+    depends_on:
+      - redis
+networks:
+  default: 

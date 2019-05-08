@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  graphite:
+    build: graphite
+  node:
+    build: .
+    depends_on:
+      - graphite
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+networks:
+  default: 
